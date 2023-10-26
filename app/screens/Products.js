@@ -121,6 +121,11 @@ const Products = () => {
     </View>
   );
 
+  const handleAddBid = () => {
+    // Navigate to the AddBidScreen when the "Add Bid" button is pressed
+    navigation.navigate("AddBid");
+  };
+  
   const renderRazorpayModal = () => {
     if (isRazorpayModalVisible) {
       return (
@@ -195,6 +200,11 @@ const Products = () => {
       </Modal>
 
       {/* {renderRazorpayModal()} */}
+      <View style = {styles.addBidButtonContainer}>
+      <TouchableOpacity style={styles.floatingButton} onPress={handleAddBid}>
+        <Text style={styles.buttonText}>+</Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -210,6 +220,17 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     textAlign: "center",
   },
+    // Container for the "Add Bid" button
+    addBidButtonContainer: {
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      margin: 10,
+    },
+  
+    // Style for the "Add Bid" button
+    addBidButton: {
+      fontSize: 12, // Adjust the font size as needed
+    },
   productItem: {
     borderWidth: 1,
     borderColor: "#ccc",
@@ -220,6 +241,10 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  buttonText:{
+    fontSize: 25,
+    color:'white'
   },
   productDescription: {
     marginTop: 8,
@@ -239,6 +264,19 @@ const styles = StyleSheet.create({
   bidButtonText: {
     color: "white",
     fontSize: 16,
+  },
+  floatingButton: {
+    position: 'absolute',
+    bottom: 10,  // Adjust as needed
+    right: 10,   // Adjust as needed
+    backgroundColor: '#374b4a', // Button background color
+    padding: 15,
+    borderRadius: 50, // Make it a circle
+    elevation: 5,  // Shadow (for Android)
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 70,
+    height: 70
   },
   modalContainer: {
     backgroundColor: "white",

@@ -9,6 +9,7 @@ import Razor from "./app/screens/Razor";
 import Register from "./app/screens/Register";
 import Welcome from "./app/screens/Welcome";
 import Payment from "./app/screens/Payment";
+import AddBid from "./app/screens/AddBid";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,13 @@ export default function App() {
         <Stack.Screen
           name="Products"
           component={Products}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="AddBid"
+          component={AddBid}
           options={{
             headerShown: false,
           }}
